@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="../../assets/css/custom.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="shortcut icon" href="../../assets/images/logo.png" type="image/x-icon">
+
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <nav class="">
+
+        <div class="container-fluid">
+
+            <div class="navb-logo">
+                <a href="../home.html"><img src="../../assets/images/logo.png" alt="Logo"></a>
+            </div>
+
+            <!-- Button trigger modal -->
+            <div class="mobile-toggler d-lg-none">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="navbModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+
+                        <div class="modal-body">
+                            
+                            <div class="modal-line">
+                                <i class="fa-solid fa-pen-to-square"></i><a href="/">New chat</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-envelope"></i><a href="/services">Requests</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-user"></i> <a href="/cases">Profile</a>
+                            </div>
+
+                            <a href="/contact" class="navb-button" type="button">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="holder body">
+        <section class="form profile">
+            <header>Profile</header>
+            <form action="#">
+                <div class=" image">
+                    <img src="../../assets/images/profiles/5.jpg" alt="">
+                </div>
+                <div class="fields input">
+                    <label>Username</label>
+                    <input type="text" value="Neo" readonly>
+                </div>
+                <div class="fields input ">
+                    <label>Phone number</label>
+                    <input type="tel" value="9344048138" readonly>
+                </div>
+                <!-- <div class="fields image">
+                    <input type="file" class="form-control" id="customFile" />
+                </div> -->
+                <div class="fields button ">
+                    <input type="submit" id="user_passwd" class="form-control" value="Edit profile">
+                </div> 
+            </form>
+        </section>
+    </div>
+    <script>
+        let profile_form = document.querySelector('.form form');
+
+        profile_form.addEventListener("submit",function(p){
+            p.preventDefault();
+
+            window.location.href="./profile-edit.html";
+        });
+
+    </script>
+</body>
+</html>

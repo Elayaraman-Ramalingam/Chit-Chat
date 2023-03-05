@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chit-Chat</title>
+
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script> 
+</head>
+<body class="body">
+    <div class="holder">
+        <section class="form login">
+            <header>Login</header>
+            <form >
+                <div class="fields input">
+                    <input type="text" id="user_tel" placeholder="Enter your Phone number"/>
+                </div>
+                <div class="fields input">
+                    <input type="text" id="user_passwd" placeholder="Enter your Password"/>
+                </div>
+                <div class="fields form-check">
+                    <input type="checkbox" class="form-check-input" id="regcheck">
+                    <label class="form-check-label " for="exampleCheck1">Remember Me</label>
+                  </div>
+                <div class="fields button ">
+                    <input type="submit" id="user_passwd" class="form-control" value="Login">
+                </div>
+                <div class="link">If don't have an account 👉<a href="../index.html">Register Here</a></div>  
+            </form>
+        </section>
+    </div>
+    <script>
+        const form = document.querySelector(".login form");
+
+        form.addEventListener("submit",function(s){
+            s.preventDefault();
+
+            window.location.href="./home.html";
+
+        });
+
+    </script>
+</body>
+</html>
