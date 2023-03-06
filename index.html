@@ -11,12 +11,14 @@
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script> 
+
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 <body class="body">
     <div class="holder">
         <section class="form reg">
             <header>Registration</header>
-            <form action="#">
+            <form>
                 <div class="fields input">
                     <input type="text" id="user_name" placeholder="Enter your name"/>
                 </div>
@@ -49,8 +51,46 @@
         form.addEventListener("submit",function(s){
             s.preventDefault();
 
-            window.location.href="./pages/login.html";
+            const username = document.getElementById("user_name").value.trim();
+            const userph = document.getElementById("user_tel").value.trim();
+            const passwd = document.getElementById("new_passwd").value.trim();
+            const userpasswd = document.getElementById("user_passwd").value.trim();
+            const regcheck = document.getElementById("regcheck").checked;
 
+            if(!username || !passwd || !userpasswd || !userph){
+                alert("Please fill out all the fields");
+                return ;
+            }
+
+            if(!/^[a-zA-Z]+$/.test(username)){
+                alert("Enter valid username");
+            }
+
+            if(!/^\d{10}$/.test(userph)){
+                alert("Enter valid Phone number");
+            }
+
+            const userList = JSON.parse(localStorage.getItem("userList")) || [];
+
+            if(userList.some(function(user){ return user.userph == userph })){
+                alert("This Phone number is already registered!");
+                return;
+            }
+            if(passwd !== userpasswd){
+                alert("both passwords should match")
+            }
+
+            if(regcheck){
+                const user = {id : uuidv4(), username : username, userph : userph, passwd : userpasswd};
+            userList.push(user);
+
+            localStorage.setItem("userList", JSON.stringify(userList));
+
+            window.location.href="./pages/login.html";
+            }
+            else{
+                alert("Agree to our policies!");
+            }
         });
 
     </script>

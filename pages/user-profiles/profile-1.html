@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile-edit</title>
+    <title>Karthi</title>
 
     <link rel="stylesheet" href="../../assets/css/custom.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -62,36 +62,25 @@
     </nav>
     <div class="holder body">
         <section class="form profile">
-            <header>Profile</header>
             <form action="#">
                 <div class=" image">
-                    <img src="../../assets/images/profiles/5.jpg" alt="">
+                    <img src="../../assets/images/profiles/1.jpg" alt="">
                 </div>
                 <div class="fields input">
                     <label>Username</label>
-                    <input type="text" value="Neo" >
+                    <input type="text" value="karthi" readonly>
                 </div>
                 <div class="fields input ">
                     <label>Phone number</label>
-                    <input type="tel" value="9344048138" >
-                </div>
-                <div class="fields image">
-                    <input type="file" class="form-control" id="customFile" />
+                    <input type="tel" value="9344048138" readonly>
                 </div>
                 <div class="fields button ">
-                    <input type="submit" id="user_passwd" class="form-control" value="Save">
+                    <input type="button" id="user_passwd" onclick="history.back()" class="form-control" value="Close">
                 </div> 
             </form>
         </section>
     </div>
     <script>
-                let profile_form = document.querySelector('.form form');
-
-                profile_form.addEventListener("submit",function(p){
-                    p.preventDefault();
-
-                    window.location.href="./profile.html";
-                });
 
     </script>
 </body>
